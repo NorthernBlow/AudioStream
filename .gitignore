@@ -2,4 +2,28 @@
 /.git
 /..gitignore.kate.swp
 /.idea
-mysite/mysite/static/bootstrap
+!mysite/mysite/static/bootstrap/*.css
+!mysite/mysite/static/bootstrap/*.js
+bootstrap.css                   bootstrap-reboot.rtl.css
+bootstrap.css.map               bootstrap-reboot.rtl.css.map
+bootstrap-grid.css              bootstrap-reboot.rtl.min.css
+bootstrap-grid.css.map          bootstrap-reboot.rtl.min.css.map
+bootstrap-grid.min.css          bootstrap.rtl.css
+bootstrap-grid.min.css.map      bootstrap.rtl.css.map
+bootstrap-grid.rtl.css          bootstrap.rtl.min.css
+bootstrap-grid.rtl.css.map      bootstrap.rtl.min.css.map
+bootstrap-grid.rtl.min.css      bootstrap-utilities.css
+bootstrap-grid.rtl.min.css.map  bootstrap-utilities.css.map
+bootstrap.min.css               bootstrap-utilities.min.css
+bootstrap.min.css.map           bootstrap-utilities.min.css.map
+bootstrap-reboot.css            bootstrap-utilities.rtl.css
+bootstrap-reboot.css.map        bootstrap-utilities.rtl.css.map
+bootstrap-reboot.min.css        bootstrap-utilities.rtl.min.css
+bootstrap-reboot.min.css.map    bootstrap-utilities.rtl.min.css.map
+
+bootstrap.bundle.js          bootstrap.esm.js          bootstrap.js
+bootstrap.bundle.js.map      bootstrap.esm.js.map      bootstrap.js.map
+bootstrap.bundle.min.js      bootstrap.esm.min.js      bootstrap.min.js
+bootstrap.bundle.min.js.map  bootstrap.esm.min.js.map  bootstrap.min.js.map
+
+
