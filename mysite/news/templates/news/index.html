@@ -28,7 +28,7 @@
     <h5 class="card-title {% cycle 'text-danger' 'text-success' %}">Категория: {{ item.category }}</h5>
     <h6 class="card-subtitle mb-2 text-muted">{{ item.title }}</h6>
     <p class="card-text">{{ item.content|safe|linebreaks|truncatewords:20 }}</p>
-    <a href="#" class="card-link">Подробнее</a>
+    <a href="{{ item.get_absolute_url }}" class="card-link">Подробнее</a>
   </div>
 </div>
     {% endfor %}
