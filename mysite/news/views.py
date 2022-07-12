@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import News, Category
 from django.http import Http404
+from .forms import NewsForm
 
 # Create your views here.
 def index(request):
@@ -28,3 +29,14 @@ def view_news(request, news_id):
     except News.DoesNotExist:
         raise Http404("Нет новостей на этой странице. Нечего глазеть.")
     return render(request, 'news/view_news.html', {"news_item": news_item})
+
+
+def add_news(request):
+    try:
+        if request.method == 'POST':
+            pass
+        else:
+            form = NewsForm()
+    except form.DoesNotExist:
+        raise Http404("Не вышло, такой страницы не существует")
+    return render(request, 'news/add_news.html', {'form': form})
