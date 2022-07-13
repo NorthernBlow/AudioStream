@@ -25,5 +25,10 @@ bootstrap.bundle.js          bootstrap.esm.js          bootstrap.js
 bootstrap.bundle.js.map      bootstrap.esm.js.map      bootstrap.js.map
 bootstrap.bundle.min.js      bootstrap.esm.min.js      bootstrap.min.js
 bootstrap.bundle.min.js.map  bootstrap.esm.min.js.map  bootstrap.min.js.map
+/home/northernblow/Документы/AudioStream/mysite/static/*
+/home/northernblow/Документы/AudioStream/mysite/mysite/static/*
 
-
+/mysite/static/bootstrap/css/
+/mysite/static/bootstrap/js/
+/mysite/static/admin/
+/mysite/mysite/static/

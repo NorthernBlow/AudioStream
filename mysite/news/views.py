@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import News, Category
 from django.http import Http404
@@ -34,9 +34,12 @@ def view_news(request, news_id):
 def add_news(request):
     try:
         if request.method == 'POST':
-            pass
+            form = NewsForm(request.POST)
+            if form.is_valid():
+                news = News.objects.create(**form.cleaned_data)
+                return redirect(news)
         else:
             form = NewsForm()
-    except form.DoesNotExist:
+    except News.DoesNotExist:
         raise Http404("Не вышло, такой страницы не существует")
     return render(request, 'news/add_news.html', {'form': form})
