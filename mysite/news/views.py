@@ -36,9 +36,11 @@ def add_news(request):
         if request.method == 'POST':
             form = NewsForm(request.POST)
             if form.is_valid():
-                news = News.objects.create(**form.cleaned_data)
+                #print(form.cleanded_data)
+                #news = News.objects.create(**form.cleaned_data) # форма не связанная с моделями
+                news = form.save() #форма связанная с моделями
                 return redirect(news)
-        else:
+        else: #если данные пришли методом GET то создаем пустую форму
             form = NewsForm()
     except News.DoesNotExist:
         raise Http404("Не вышло, такой страницы не существует")
