@@ -1,10 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block title %}
+{{ title }} :: {{ block.super }}
+{% endblock %}
+
+{% block sidebar %}
+{% include 'inc/_sidebar.html' %}
+{% endblock %}
+
+{% block content %}
+
+  {% if news %}
+    {% for item in news %}
+     <div class="card mb-3 ms-3 mt-3" style="width: 18rem;">
+  <div class="card-body">
+    <div class="media">
+      {% if item.photo %}
+      <img src="{{ item.photo.url }}" class="img-fluid" alt="KOK">
+      {% else %}
+       <img src="https://pp.userapi.com/c841239/v841239291/6026b/9Ysgb6XadI8.jpg" class="img-fluid" alt="KOK" width="320">
+      {% endif %}
+      <div class="media-body">
+
+      </div>
+    </div>
+    <h5 class="card-title {% cycle 'text-danger' 'text-success' %}">Категория: {{ item.category }}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">{{ item.title }}</h6>
+    <p class="card-text">{{ item.content|safe|linebreaks|truncatewords:20 }}</p>
+    <a href="{{ item.get_absolute_url }}" class="card-link">Подробнее</a>
+  </div>
+</div>
+    {% endfor %}
+  {% else %}
+    Oops...something wrong with your computer
+  {% endif %}
+  </div>
+  </div>
+{% endblock %}

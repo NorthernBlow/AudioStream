@@ -17,15 +17,14 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from news.views import index
 from news.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('news.urls')),
-    path('', index),
-    path('category/<int:category_id>/', get_category),
-    path('news/<int:news_id>/', view_news)
+    #path('', index),
+    #path('category/<int:category_id>/', get_category),
+    path('news/<int:pk>/', view_news)
 ]
 
 if settings.DEBUG:
